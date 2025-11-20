@@ -3,180 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage with Centered Logo</title>
+    <title>marketanalytica.org</title>
     <style>
-        /* General body styles */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        /* Style for the horizontal black band */
-        .header-band {
-            background-color: #404040; /* Hex color for the black band */
-            width: 100%;               /* Full width */
-            height: 200px;             /* Adjust height as needed */
-            position: relative;        /* For absolute positioning of the logo */
-        }
+	/* NEW: Ensures the page containers fill the entire screen height */
+	html, body {
+		height: 100%; /* CRITICAL for sticky footer */
+		margin: 0;
+	}
 
-        /* Style for the logo to center it */
-        .logo {
-            position: absolute;
-            top: 50%;                   /* Center the logo vertically */
-            left: 50%;                  /* Center the logo horizontally */
-            transform: translate(-50%, -50%); /* Adjust the position to true center */
-        }
+	/* NEW: This element grows to push the footer down */
+	.content-wrap {
+		flex: 1 0 auto; 
+	}
 
-        /* Optional: Adjust the logo size */
-        .logo img {
-            max-width: 500px;            /* Control the max width of the logo */
-            height: auto;                /* Keep the aspect ratio */
-        }
-    </style>
+	/* After deletion, your only body rule should contain this: */
+	body {
+		margin: 0; /* from your original CSS */
+		font-family: Arial, sans-serif; /* from your original CSS */
+		display: flex; /* New Flexbox property */
+		flex-direction: column; /* New Flexbox property */
+		background-color: #ECF0F1; /* Moved from inline style */
+		color: #333; /* Moved from inline style */
+	}
+	 
+	/* Style for the horizontal black band (Header) */
+	.header-band {
+		background-color: #404040; /* Hex color for the black band */
+		width: 100%;
+		/* height: 200px; <--- commented-out */
+		position: relative; 
+		
+		/* THE FIX: This centers the image inside the band */
+		text-align: center; 
+	}
+
+	/* Style for the logo container (Not strictly needed for centering now, but good to have) */
+	.logo {
+		/* If you had other centering code here previously, it's now replaced by the text-align above */
+	}
+
+	/* Adjust the logo image size */
+	.logo img {
+		max-width: 720px; /* Control the max width of the logo */
+		height: auto;     /* Keep the aspect ratio */
+		
+		/* NEW: Ensures the logo image itself is treated as an inline element for centering */
+		display: inline-block; 
+	}
+
+	/* --- NEW STYLES START HERE --- */
+
+	/* Style for the Navigation Bar (.main-nav) */
+	.main-nav {
+		background-color: #34495E; /* Dark blue/gray background */
+		text-align: center; /* Center the links */
+		padding: 15px 0;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	}
+
+	.main-nav a {
+		color: white;
+		text-decoration: none; /* Remove underline */
+		margin: 0 25px; /* Spacing between links */
+		font-size: 1.1em;
+		padding: 10px 15px;
+		border-radius: 5px;
+		transition: background-color 0.3s; /* Smooth transition for hover effect */
+	}
+
+	.main-nav a:hover {
+		background-color: #2C3E50; /* Slightly darker on hover */
+	}
+
+	/* Style for the Hero Section (Introduction Banner) */
+	.hero-section {
+		padding: 80px 20px;
+		text-align: center;
+		background-color: #ECF0F1; /* Matches your body background */
+		color: #2C3E50;
+	}
+
+	.hero-section h1 {
+		font-size: 3em;
+		margin-bottom: 10px;
+	}
+
+	.hero-section p {
+		font-size: 1.3em;
+		margin-bottom: 30px;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Style for the Call-to-Action Button */
+	.cta-button {
+		display: inline-block;
+		padding: 15px 40px;
+		background-color: #27AE60; /* A friendly green color */
+		color: white;
+		text-decoration: none;
+		font-size: 1.2em;
+		font-weight: bold;
+		border-radius: 8px; /* Rounded corners */
+		transition: background-color 0.3s, transform 0.1s;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.cta-button:hover {
+		background-color: #2ecc71; /* Lighter green on hover */
+		transform: translateY(-2px); /* Slight lift effect */
+	}
+	
+	.button-wrapper {
+		text-align: center; /* Ensures content inside is centered */
+		margin-top: 20px;   /* Add some vertical spacing above the button */
+	}
+
+	/* Style for the Footer */
+	footer {
+		text-align: center;
+		padding: 20px;
+		background-color: #333;
+		color: white;
+		margin-top: 50px; /* Optional: adds space between main content and footer */
+	}
+
+    </style>	
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #ECF0F1; color: #333;">
-    <!-- Black horizontal band (header) with logo -->
-    <div class="header-band">
-        <div class="logo">
-            <img src="market_analytica_logo_2025.png" alt="Company Logo">
+
+
+<body>
+    
+    <div class="content-wrap">
+        
+        <div class="header-band">
+            <div class="logo">
+                <img src="market_analytica_logo_2025.png" alt="Company Logo">
+            </div>
         </div>
-    </div>
-	
-</body>
+        
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="asset_asset_class_sector_layout.html">Asset Classes/Sectors Layout</a>
+			<a href="watchlist.html">Current Watchlist</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        
+        <section class="hero-section">
+			<h1>Welcome to Market Analytica</h1>
+				
+				<p>Explore proprietary financial market analysis across various asset classes.</p>
+				
+				<p>Proprietary content contained herein is uniquely derived using a suite of proprietary models and applications based on both market-derived and proprietary time-series data, both real and synthetic, that focus on fundamental changes in data within the framework of technical, fundamental, and quantitative methods. This suite of models and proprietary applications focus on distinctive (data) traits at specific times to implicate a prospective market turn or anticipate a directional trend. Said opportunities are provided for consideration and expressed in the form of charts and commentary in the context of formulating a trading or investing strategy. </p>
 
-    <!-- Rest of your page content here -->
+				<div class="button-wrapper">
+					<a href="asset_class_comparison.html" class="cta-button">View The Data Now</a>
+				</div>	
+        </section>
 
-
-
-<body style="font-family: Arial, sans-serif; background-color: #F6DDCC; color: #333;">
-    <p style="font-size: 18px; line-height: 1.6;">
-        .
-    </p>
-	
-    <div style="background-color: #404040; color: white; padding: 10px;">
-        <h1 style="text-align: center;"> Bonds</h1>
-    </div>
+    </div> 
     
-    <hr style="border: 1px solid #404040;">
-	
-	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> Treasury YIELD Proxies</h1>
-    </div>
-	
-    <img src=" bonds.png" alt="An example image" style="display:block;margin: 0 auto;">
-</body>	
-	
-	
-<body style="font-family: Arial, sans-serif; background-color: #F6DDCC; color: #333;">
-    <p style="font-size: 18px; line-height: 1.6;">
-        .
-    </p>
-	
-    <div style="background-color: #404040; color: white; padding: 10px;">
-        <h1 style="text-align: center;"> Equities</h1>
-    </div>
-    
-    <hr style="border: 1px solid #404040;">
-	
-	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> Stock Indices</h1>
-    </div>
-	
-    <img src="indices.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Energy (GICS 10)</h1>
-    </div>
-	
-    <img src="sector_10.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Basic Materials (GICS 15)</h1>
-    </div>
-	
-    <img src="sector_15.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Industrials (GICS 20)</h1>
-    </div>
-	
-    <img src="sector_20.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Consumer Discretionary (GICS 25)</h1>
-    </div>
-	
-    <img src="sector_25.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-    <div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Consumer Staples (GICS 30)</h1>
-    </div>
-	
-    <img src="sector_30.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-    <div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Healthcare (GICS 35)</h1>
-    </div>
-	
-    <img src="sector_35.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-    <div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Financials (GICS 40)</h1>
-    </div>
-	
-    <img src="sector_40.png" alt="An example image" style="display:block;margin: 0 auto;">
-
-    <div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Information Technology (GICS 45)</h1>
-    </div>
-	    
-    <img src="sector_45.png" alt="An example image" style="display:block;margin: 0 auto;">
-    	
-	
-    <div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Communication Services (GICS 50)</h1>
-    </div>
-    
-    <img src="sector_50.png" alt="An example image" style="display:block;margin: 0 auto;">
-    
-	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> SECTOR: Utilities (GICS 55)</h1>
-    </div>
-	
-    <img src="sector_55.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-    <hr style="border: 2px dashed gray;">
-</body>
-
-
-
-<body style="font-family: Arial, sans-serif; background-color: #F6DDCC; color: #333;">
-    <p style="font-size: 18px; line-height: 1.6;">
-        .
-    </p>
-
-    <div style="background-color: #404040; color: white; padding: 10px;">
-        <h1 style="text-align: center;"> Cryptocurrencies</h1>
-    </div>
-    
-    <hr style="border: 1px solid #404040;">
-    	
-    <div style="background-color: white; color: #d35400; padding: 1px;">
-        <h1 style="text-align: left;"> CRYPTO: USD-Denominated</h1>
-    </div>
-    
-    <img src="crypto.png" alt="An example image" style="display:block;margin: 0 auto;">
-	
-    <hr style="border: 2px dashed gray;">
-    
-    <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
+    <footer>
         &copy; 2025 Market Analytica. All rights reserved.
     </footer>
-	
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="asset_class_sector_layout.html">Asset Layout</a> |
-    <a href="watchlist.html">My Watchlist</a>
-</nav>
+    
 </body>
 </html>
