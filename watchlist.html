@@ -3,76 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage with Centered Logo</title>
+    <title>Watchlist - Market Analytica</title>
     <style>
         /* General body styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #ECF0F1; 
+            color: #333;
         }
-        
-        /* Style for the horizontal black band */
+        /* Style for the horizontal black band (Header) */
         .header-band {
-            background-color: #404040; /* Hex color for the black band */
-            width: 100%;               /* Full width */
-            height: 200px;             /* Adjust height as needed */
-            position: relative;        /* For absolute positioning of the logo */
+            background-color: #404040; 
+            width: 100%;
+            height: 200px;
+            position: relative;
         }
-
         /* Style for the logo to center it */
         .logo {
             position: absolute;
-            top: 50%;                   /* Center the logo vertically */
-            left: 50%;                  /* Center the logo horizontally */
-            transform: translate(-50%, -50%); /* Adjust the position to true center */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-
-        /* Optional: Adjust the logo size */
+        /* Adjust the logo size */
         .logo img {
-            max-width: 500px;            /* Control the max width of the logo */
-            height: auto;                /* Keep the aspect ratio */
+            max-width: 500px;
+            height: auto;
+        }
+        /* Styles for content sections */
+        .watchlist-container {
+            padding: 20px;
         }
     </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #ECF0F1; color: #333;">
-    <!-- Black horizontal band (header) with logo -->
+<body>
     <div class="header-band">
         <div class="logo">
             <img src="market_analytica_logo_2025.png" alt="Company Logo">
         </div>
     </div>
-	
-</body>
-
-    <!-- Rest of your page content here -->
-
-
-<body style="font-family: Arial, sans-serif; background-color: #F6DDCC; color: #333;">
+ 
     <p style="font-size: 18px; line-height: 1.6;">
         .
     </p>
 	
     <div style="background-color: #404040; color: white; padding: 10px;">
-        <h1 style="text-align: center;"> Watchlist </h1>
+        <h1 style="text-align: center;">Watchlist</h1>
+    </div>
+
+    <div style="background-color: white; color: #1F618D; padding: 1px;">
+        <h1 style="text-align: left;">In Focus</h1>
+    </div>
+    
+    <div class="watchlist-container">
+        <img src="images/watchlist.png" alt="Current Market Watchlist" style="display:block; max-width: 100%; height: auto; margin: 20px auto;">
+    </div>
+    
+	
+    <p style="font-size: 18px; line-height: 1.6;">
+        .
+    </p>
+	
+    <div style="background-color: #404040; color: white; padding: 10px;">
+        <h1 style="text-align: center;">Watchlist Prospects</h1>
     </div>
     
     <hr style="border: 1px solid #404040;">
 	
 	<div style="background-color: white; color: #1F618D; padding: 1px;">
-        <h1 style="text-align: left;"> In Focus </h1>
+        <h1 style="text-align: left;"> Bit More Time . . . </h1>
     </div>
 	
-    <img src=" watchlist.png" alt="An example image" style="display:block;margin: 0 auto;">
-</body>	
+    <img src="images/watchlist_prospects.png" alt="Watchlist Prospects layout is unavailable or is having a problem." style="display:block;margin: 0 auto;">
 	
-
-<body style="font-family: Arial, sans-serif; background-color: #F6DDCC; color: #333;">
     <p style="font-size: 18px; line-height: 1.6;">
         .
     </p>
-    
+	
     <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
         &copy; 2025 Market Analytica. All rights reserved.
     </footer>
+    
 </body>
 </html>
